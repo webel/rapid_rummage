@@ -1,8 +1,6 @@
 #!/bin/zsh
 
-# RapidRummage: The Ridiculously Fast File Finder
-# Because why use 'find' when you can do the same thing at ludicrous speed with mdfind and grep?
-# Perfect for when you want to pretend you're doing something complex, but you're really not.
+# RapidRummage: The Ridiculously Fast File Searcher 
 # Version 1.0
 # Author: Cookie
 
@@ -49,7 +47,7 @@ cd "$working_dir" || exit
 
 # Function to search using mdfind and filter results with grep
 search_directory() {
-    echo "Hold on to your hats! Searching for '$search_term' in '$working_dir', avoiding these boring places: $excluded_dirs"
+    echo "\n Hold on to your hats! Searching for '$search_term' in '$working_dir', avoiding outputting these boring places: $excluded_dirs \n"
 
     # Use mdfind to search and grep to exclude certain directories
     mdfind -onlyin "$working_dir" "$search_term" 2>/dev/null | grep -vE "($exclude_pattern)"
