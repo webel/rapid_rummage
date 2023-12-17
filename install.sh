@@ -12,6 +12,12 @@ fi
 # Make rummage.sh executable
 chmod +x "$script_path"
 
+# Check if ~/.local/bin exists
+if [ ! -d ~/.local/bin ]; then
+    echo "~/.local/bin does not exist."
+    exit 1
+fi
+
 # Create a symbolic link in ~/.local/bin
 ln -sf "$script_path" ~/.local/bin/rummage
 
